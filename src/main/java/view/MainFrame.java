@@ -92,7 +92,7 @@ public class MainFrame extends javax.swing.JFrame {
         ));
         jScrollPane2.setViewportView(invoiceItemsTable);
 
-        createInvoiceBtn.setText("Create New Invoice ");
+        createInvoiceBtn.setText("Create New Invoice");
         createInvoiceBtn.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 createInvoiceBtnActionPerformed(evt);

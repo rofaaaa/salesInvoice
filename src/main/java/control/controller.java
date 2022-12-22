@@ -48,6 +48,7 @@ public class controller implements ActionListener, ListSelectionListener {
         } else if (command=="Save File"){
             savefile();
         }else if (command=="Create New Invoice"){
+            System.out.println("create new ");
             createNewInvoice();
         }else if(command=="Delete Invoice"){
             deleteInvoice();
@@ -73,6 +74,8 @@ public class controller implements ActionListener, ListSelectionListener {
         if (selectedIndex != -1) {
         System.out.println("You have selected row: " + selectedIndex);
         Invoice currentInvoice = frame.getInvoices().get(selectedIndex);
+        System.out.println("nummmmm  "+currentInvoice.getNum());
+                frame.getInvoiceNumberValue().setText("bhbjj");
         frame.getInvoiceNumberValue().setText(""+currentInvoice.getNum());
         frame.getCustomerNameValue().setText(currentInvoice.getCustomerName());
         frame.getInvoiceDateValue().setText(currentInvoice.getDate());
@@ -162,7 +165,7 @@ public class controller implements ActionListener, ListSelectionListener {
                 lines += "\n";
             }
         }
-        System.out.println("Check point");
+        //System.out.println("Check point");
         try {
             JFileChooser f= new JFileChooser();
             int result = f.showSaveDialog(frame);
@@ -226,7 +229,7 @@ public class controller implements ActionListener, ListSelectionListener {
         String customer = invoiceView.getCustNameField().getText();
         int num = frame.getNextInvoiceNum();
         try {
-            String[] dateParts = date.split("-");  // "22-05-2013" -> {"22", "05", "2013"}  xy-qw-20ij
+            String[] dateParts = date.split("-");  // "22-05-2013" 
             if (dateParts.length < 3) {
                 JOptionPane.showMessageDialog(frame, "Wrong date format", "Error", JOptionPane.ERROR_MESSAGE);
             } else {
